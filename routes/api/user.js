@@ -6,7 +6,7 @@ const express = require('express');
 // creamos un router
 const router = express.Router();
 
-const User = require('../../models/User');
+const User = require('../../models/user.js');
 
 // GET a /api/users (todos los usuarios)
 router.get('/users', (req, res) => {
