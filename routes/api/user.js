@@ -8,6 +8,13 @@ const router = express.Router();
 
 const User = require('../../models/user.js');
 
+router.use((req, res, next) => {
+  res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 // GET a /api/users (todos los usuarios)
 router.get('/users', (req, res) => {
   User.find((err, users) => {
